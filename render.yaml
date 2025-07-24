@@ -12,3 +12,6 @@ services:
         value: tours.settings
       - key: PYTHON_VERSION
         value: 3.11
+buildCommand: |
+  apt-get update && apt-get install -y default-libmysqlclient-dev build-essential
+  pip install -r requirements.txt
