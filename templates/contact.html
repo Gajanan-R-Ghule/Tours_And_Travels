@@ -1,0 +1,31 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body %}
+
+<section class="contact_sec">
+<section class="white text-align align-center margin">
+    <h1>Contact Form</h1> 
+</section>
+
+<section>
+    <div class="contact_div">
+        <form action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
+            <label class="block white size-22" for="name">Enter a Name</label>
+            <input class="block size-22" type="text" id="name" name="name"><br>
+
+            <label class="block white size-22" for="mobile">Enter a Mobile Number</label>
+            <input class="block size-22" type="number" id="mobile" name="mobile"><br>
+
+            <label class="block white size-22" for="email">Enter a Email Id</label>
+            <input class="block size-22" type="email" id="email" name="email"><br>
+
+            <label class="block white size-22" for="review">Enter a Review</label>
+            <textarea class="block size-22" name="review" id="review" cols="30" rows="3"></textarea><br>
+
+            <button class="btn btn-secondary block size-22">Submit</button>
+        </form>
+    </div>
+</section>
+</section>
+{% endblock body %}

@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: tours-django
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn tours.wsgi"
+    runtime: python
+    region: oregon
+    plan: free
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: tours.settings
+      - key: PYTHON_VERSION
+        value: 3.11

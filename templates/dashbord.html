@@ -1,0 +1,30 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body %}
+<section class="body white">
+    <h1 class="h1">Confirm Order</h1>
+
+{% for i in data %}
+<div class="card mb-3 row text-white" >
+    <div class="row g-0 bg-dark">
+      <div class="col-md-8 p-2" style="height: 200px;">
+        <img src="{{i.image}}" class="img-fluid rounded-start" style="height: 250px;">
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+
+            <h3 class="card-title">{{i.name|upper}}</h3>
+            <h5 class="card-title"><b>Pickup Point: </b>{{i.From}}</h5>
+          <h5 class="card-title"><b>Destination: </b>{{i.To}}</h5>
+          <h5 class="card-title"><b>Mode: </b>{{i.mode}}</h5>
+          <h5 class="card-title"><b>Trip Date: </b>{{i.date}}</h5>
+          <h5 class="card-title"><b>Amount: </b>{{i.prize}}</h5>
+          <a href="pay{{i.id}}" class="btn btn-success"><b>PAY: </b>{{i.prize}}</a>
+          <a href="delit{{i.id}}" class="cross"><i class="bi bi-x-lg btn btn-danger"></i></a>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</section>
+{% endblock body %}

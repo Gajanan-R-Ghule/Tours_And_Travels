@@ -1,0 +1,14 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body %}
+
+<section class="contact_sec bg-dark">
+    {% for i in data %}
+    <h1 class="white">Name = {{i.name}}</h1>
+    <h1 class="white">Prize = {{i.prize}}</h1>
+    <h1 class="white">Mode = {{i.mode}}</h1>
+    <a href="payment/{{i.id}}" class="btn btn-success">Make payment</a>
+    {% endfor %}
+</section>
+
+{% endblock body %}

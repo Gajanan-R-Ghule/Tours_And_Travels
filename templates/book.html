@@ -1,0 +1,56 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body %}
+<section class="contact_sec">
+    <div class="contact_div">
+        <form method="POST">
+            {% csrf_token %}
+            <label class="block white size-22" for="name">Enter a Name</label>
+            <input class="block size-22" type="text" id="name" name="name" required><br>
+
+            <label class="block white size-22" for="mobile">Enter a Mobile Number</label>
+            <input class="block size-22" type="number" id="mobile" name="mobile" required><br>
+
+            <div>
+                <label for="start3" class="p-3 white size-22">From</label>
+                <select name="start3" id="start3" class="select1 btn btn-dark" required>
+                    <option class="option" value="None">From</option>
+                    <option class="option" value="Pune">Pune</option>
+                    <option class="option" value="Mumbai">Mumbai</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="start1" class="p-3 white size-22">Select Mode</label>
+                <select name="start1" id="start1" class="select1 btn btn-dark" required>
+                    <option class="option" value="None">Select Mode</option>
+                    <option class="option" value="By_Air">By Air</option>
+                    <option class="option" value="By_Road">By Road</option>
+                    <option class="option" value="By_Train">By Train</option>
+                </select>
+            </div>
+
+
+            <label class="block white size-22" for="email">Enter a Email Id</label>
+            <input class="block size-22" type="email" id="email" name="email" required><br>
+
+            <label class="block white size-22" for="age">Age</label>
+            <input class="block size-22" type="number" id="age" name="age" required><br>
+
+            <label for="gender" class="white size-22">Male</label>
+            <input type="radio" id="gender" name="gender" value="Male" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="gender" class="white size-22">Female</label>
+            <input type="radio" id="gender" name="gender" value="Female" required>
+            <br>
+            <br>
+            <label for="date" class="white size-22">Select Date</label>
+            <input type="date" id="date" name="date" class="select1 btn btn-dark">
+
+
+
+            <button class="btn btn-secondary block size-22 my-3">Submit</button>
+        </form>
+    </div>
+</section>
+
+{% endblock body %}

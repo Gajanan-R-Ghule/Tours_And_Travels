@@ -1,0 +1,22 @@
+# import os
+# import csv
+# from django.core.management.base import BaseCommand
+# from django.conf import settings
+# from ei.models import Category
+
+
+# class Command(BaseCommand):
+#     help = 'Import data from CSV file'
+    
+#     def handle(self, *args, **options):
+#         csv_file_path = os.path.join(settings.BASE_DIR, 'static', 'csv', 'category.csv')
+        
+#         with open(csv_file_path, 'r', encoding='utf-8') as file:
+#             csv_reader = csv.DictReader(file, delimiter=';')
+            
+#             for row in csv_reader:
+#                 Category.objects.create(
+#                     name=row['name'],
+#                     img=row['img'],
+#                 )
+#         self.stdout.write(self.style.SUCCESS('Data imported successfully'))

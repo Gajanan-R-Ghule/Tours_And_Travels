@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loging</title>
+    {% load static %}
+    <link rel="stylesheet" href="static/css/login1.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="login" >
+            <form method="POST">
+                {% csrf_token %}
+                <label for="chk" aria-hidden="ture" id="log" style="color:white;">Login</label>
+                <input type="text" name="username" id="username" placeholder="UserName" required="">
+                <input type="password" name="password" id="password" placeholder="Password" required="">
+                {% if e_massage %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <p style="color: red;">{{ e_massage }}</p>
+                {% endif %}
+                <button>login</button>
+            </form>
+            <div class="div1">
+                Dont have an account?
+            <a href="{% url 'signup' %}">Create account</a>
+        </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
