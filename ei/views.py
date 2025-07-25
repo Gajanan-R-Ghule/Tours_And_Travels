@@ -222,7 +222,7 @@ def success(request):
 
     Safe travels!
     Gajanan Ghule
-    EXPLORE INDIA PVT. LTD.'''
+    Prestige Tours and Travels PVT. LTD.'''
 
     frm='gajananghule6117@gmail.com'
     u=User.objects.filter(id=request.user.id)
