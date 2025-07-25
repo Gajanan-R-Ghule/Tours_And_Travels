@@ -1,0 +1,7 @@
+LOAD DATABASE
+     FROM mysql://root:root@host.docker.internal/locations
+     INTO postgresql://troursdb_user:Hskoowx4pLhvIy579c8xuETMUEuF5S6Y@dpg-d21ivou3jp1c73ftphi0-a/troursdb
+
+ WITH include no drop, create tables, preserve index names
+
+SET work_mem to '16MB', maintenance_work_mem to '512 MB';

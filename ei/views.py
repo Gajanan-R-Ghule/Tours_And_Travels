@@ -238,9 +238,24 @@ def success(request):
     )
 
     return render(request,'paymentsuccess.html')
-
+#  
 from django.core.management import call_command
 
 def run_migrations(request):
     call_command('migrate')
     return HttpResponse("Migrations applied!")
+
+# 
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def create_super_user(request):
+    username = "Gajanan"
+    email = "gajananghule6117@gmail.com"
+    password = "Gaja2002,@"
+
+    if not User.objects.filter(username=username).exists():
+        User.objects.create_superuser(username=username, email=email, password=password)
+        return HttpResponse("Superuser created successfully.")
+    else:
+        return HttpResponse("Superuser already exists.")
