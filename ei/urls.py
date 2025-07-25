@@ -18,4 +18,6 @@ urlpatterns = [
     path('delit<id>',views.delete,name="delete"),
     path('payment/<id>',views.payment1,name="payment"),
     path('success',views.success,name="success"),
+    path('run-migrations/', views.run_migrations),
+
 ]

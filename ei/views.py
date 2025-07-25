@@ -238,3 +238,9 @@ def success(request):
     )
 
     return render(request,'paymentsuccess.html')
+
+from django.core.management import call_command
+
+def run_migrations(request):
+    call_command('migrate')
+    return HttpResponse("Migrations applied!")
