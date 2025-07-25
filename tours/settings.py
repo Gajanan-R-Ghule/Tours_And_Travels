@@ -85,16 +85,38 @@ WSGI_APPLICATION = 'tours.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'locations',
-        'USER':'root',
-        'HOST':'localhost',
-        'PASSWORD':'root',
-        'PORT':3306,
+
+import os
+
+if os.getenv("RENDER", None):  # Production (Render)
+    
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }
-}
+else:  # Local
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'locations',
+            'USER': 'root',
+            'PASSWORD': 'root',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'locations',
+#         'USER':'root',
+#         'HOST':'localhost',
+#         'PASSWORD':'root',
+#         'PORT':3306,
+#     }
+# }
 
 
 # Password validation
