@@ -1,0 +1,28 @@
+.anchor{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.anchor a:hover{
+    color: black;
+}
+.anchor a i:hover{
+    color: black;
+}
+.anchor a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.anchor tr th{
+    background-color: white;
+    color: black;
+}
+
+.anchor tr td a{
+    background-color: white;
+}
+.dropdown-toggle{
+    background: transparent;
+}

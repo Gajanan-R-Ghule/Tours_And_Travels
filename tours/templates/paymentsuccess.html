@@ -1,0 +1,15 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body %}
+<section class="contact_sec bg-dark">
+<div class="row mt-5">
+    <div class="col-md-6 mx-auto shadow p-3 white">
+        <h2>PAYMENT SUCCESSFULL</h2>
+        <p>Thanks For Planning Trip With us....</p>
+        <p>Visit Again </p>
+        <p><a href="{% url 'home' %}"><button class="btn btn-success">HOME</button></a></p>
+    </div>
+</div>
+</section>
+
+{% endblock body %}

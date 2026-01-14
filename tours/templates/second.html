@@ -1,0 +1,28 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body %}
+
+{% if b %}
+<h2 class="section heading">{{a}} location in {{b}}</h2>
+{% else %}
+<h2 class="section heading">{{a}}</h2>
+{% endif %}
+<section class="s_section2">
+    {% for i in data %}
+
+    <div class="card_div bg-dark">
+        <a href="detail{{i.id}}">
+            <img src="{{i.image}}" alt="">
+
+
+            <div class="card_inner_div">
+                <h4 class="hedding_4 white">{{i.name}}</h4>
+                <a href="detail{{i.id}}" class="btn btn-primary">See Details</a>
+                <!-- <p class="white">{{i.id}}</p> -->
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+
+</section>
+{% endblock body %}

@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: tours-django
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn tours.wsgi:application"
+    runtime: python
+    region: oregon
+    plan: free
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: tours.settings
+      - key: PYTHON_VERSION
+        value: 3.11
+buildCommand: |
+  apt-get update && apt-get install -y default-libmysqlclient-dev build-essential
+  python manage.py collectstatic --noinput
+  python manage.py migrate

@@ -1,0 +1,29 @@
+.card_div{
+    margin: 20px;
+    height: 300px;
+    width: 300px;
+    /* background-color: white; */
+    border-radius: 5px;
+}
+.card_div img{
+    height: 60%;
+    width: 100%;
+    border-radius: 5px;
+}
+.card_inner_div{
+    text-align: center;
+}
+.s_section2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.btn{
+    margin-bottom: 0;
+}
+
+h2.section2.heading{
+    margin-top: 100px;
+}
+

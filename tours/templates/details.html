@@ -1,0 +1,68 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body %}
+
+<section class="about">
+    {% for i in data %}
+    <div class="detail_div1">
+        <img class="detail_img" src="{{i.image}}">
+
+        <h4 class="detail_containt bg-info">Location Name: {{i.name}}</h4>
+        <h4 class="detail_containt">State: {{i.state}}</h4>
+        <h4 class="detail_containt">District: {{i.district}}</h4>
+        <h4 class="detail_containt">Village/City: {{i.location}}</h4>
+        <h4 class="detail_containt">Description:-</h4>
+        <p class="detail_containt">{{i.desc}}</p>
+    </div>
+    </div>
+
+    <div class="detail_div1">
+        <div class="flex1">
+            <img class="logoTran by_air" src="https://i.postimg.cc/ht1Jxz0f/R.jpg">
+            <h3 class="detail_containt pading">By AirLines</h3>
+        </div>
+        <p class="margin detail_containt pading">{{i.byair}}</p>
+        <br><br>
+        <div class="flex1">
+            <img class="logoTran by_air" src="https://i.postimg.cc/d0PC5gCV/q.jpg">
+            <h3 class="detail_containt pading">By Bus</h3>
+        </div>
+        <p class="margin detail_containt pading">{{i.byroad}}</p>
+        <br><br>
+        <div class="flex1">
+            <img class="logoTran by_air" src="https://i.postimg.cc/SsqDdzB3/OIP-1.jpg">
+            <h3 class="detail_containt pading">By Train</h3>
+        </div>
+        <p class="margin detail_containt pading">{{i.bytrain}}</p>
+    </div>
+
+    <a style="width: 100%;" href="book{{i.id}}" class="btn btn-secondary align_i mt-4">Trip Plan</a>
+    {% endfor %}
+</section>
+<br>
+<div class="contaner-fluid">
+    <div class="row">
+        <h1 class="detail_containt center">More location in Same City</h1>
+        <section class="section2">
+            <div class="sesation_div section2">
+
+                {% for i in data1 %}
+                <div class="col-md-3 col-sm-6 mb-4 d-flex">
+                    <div class="card_div">
+                        <a href="detail{{i.id}}">
+                            <img src="{{i.image}}" alt="">
+                            <div class="card_inner_div">
+                                <h4 class="hedding_4">{{i.name}}</h4>
+                                <h4 class="hedding_4">City: {{i.district}}</h4>
+                                <a href="detail{{i.id}}" class="btn btn-primary">See Details</a>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock body %}

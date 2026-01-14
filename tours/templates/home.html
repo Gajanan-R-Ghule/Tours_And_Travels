@@ -1,0 +1,72 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block body %}
+<section class="imginfo">
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active slide">
+        <img src="/static/images/slide1.jpg" class="d-block w-100">
+      </div>
+      <div class="carousel-item slide">
+        <img src="/static/images/slide2.jpg" class="d-block w-100">
+      </div>
+      <div class="carousel-item slide">
+        <img src="/static/images/slide3.jpg" class="d-block w-100">
+      </div>
+      <div class="carousel-item slide">
+        <img src="https://i.postimg.cc/xTvwmKxN/beautiful-panorama-view-kusur-plateau-260nw-1198774864.webp" class="d-block w-100">
+      </div>
+      <div class="carousel-item slide">
+        <img src="https://i.postimg.cc/CLhNvkMq/360-F-461165548-GEbi-E2x642-O2-Gfwxu7-UJ7-Mlx6-ZG9-BB2-A.jpg" class="d-block w-100">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<div class="contaner-fluid">
+  <div class="row">
+    <h2 class="section heading"> Category</h2>
+    <section class="section4">
+      {% for i in data %}
+      <div class="col-md-3 col-sm-6 d-flex justify-content-center">
+        <div class="main_div1">
+          <a class="main_a cart_img" href="second{{i.name}}">
+            <img class="cart_img" src="{{i.img}}">
+            <p class="cart_p">{{i.name}}</p>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- <div style="border: none;" class="main_div1">
+    </div> -->
+
+    </section>
+
+    <!-- <hr class="line"> -->
+
+
+    <h2 class="section heading"> State</h2>
+    <section class="section4">
+      {% for i in data1 %}
+      <div class="col-md-3 col-sm-6 d-flex justify-content-center">
+        <div class="main_div1">
+          <a class="main_a cart_img" href="second{{i.name}}">
+            <img class="cart_img" src="{{i.img}}">
+          <p class="cart_p">{{i.name}}</p>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+  </div>
+</div>
+{% endblock body %}
+<!-- {% include 'footer.html' %} -->
